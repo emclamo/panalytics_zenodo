@@ -46,4 +46,37 @@ upload_log.csv   → Auto-generated upload tracker
 
 ---
 
+## 🧙 CSV Metadata Wizard
+
+This repository supports team-friendly metadata preparation using a spreadsheet.
+
+### Input
+
+Fill in `csv/metadata_input.csv` with the following columns:
+
+- `doi`, `title`, `creators` (required)
+- `description`, `keywords`, `license`, `access_right`, `upload_type` (optional but recommended)
+
+Example:
+
+```csv
+doi,title,creators,description,keywords,license,access_right,upload_type
+10.1016/j.snb.2019.126822,Phosphate Sensor,Smith, J.; Doe, A.,Sensor detects PO4x-,phosphate,sensor,cc-by-4.0,open,publication
+```
+
+### Generate Metadata
+
+Run this script to convert rows into Zenodo metadata JSON files:
+
+```bash
+python scripts/csv_to_json_metadata.py
+```
+
+This will produce:
+```
+metadata/10.1016:j.snb.2019.126822_metadata.json
+```
+
+You can then use the uploader to push all prepared metadata and PDFs to Zenodo.
+
 © Managed by Eric McLamore and contributors.
