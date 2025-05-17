@@ -1,3 +1,36 @@
+## 📦 Project Overview: PAnalytics Zenodo Archive System
+
+This project automates the metadata preparation, validation, and upload of research artifacts (PDFs and data files) to [Zenodo](https://zenodo.org/) under the `panalytics` community.
+
+### ✅ Key Features Implemented
+
+| Component              | Description                                                                 |
+|------------------------|-----------------------------------------------------------------------------|
+| `pdf/`                 | Stores publication PDFs, named by DOI                                       |
+| `metadata/`            | Stores structured metadata JSON files (one per PDF)                         |
+| `csv/`                 | Accepts spreadsheet-based metadata input via `metadata_input.csv`           |
+| `scripts/csv_to_json_metadata.py` | Wizard that converts CSV rows to Zenodo-compatible JSON files     |
+| `scripts/upload_batch_to_zenodo.py` | Secure uploader with rate limiting, retry logic, and logging     |
+| `upload_log.csv`       | Logs every upload attempt with status, timestamps, errors, and Zenodo links |
+
+### ⚙️ Technical Highlights
+
+- ✅ Rate limiting (default: 7 days between uploads)
+- ✅ DOI deduplication via Zenodo Search API
+- ✅ Dry-run mode for safe testing
+- ✅ Retry logic on transient upload failures
+- ✅ Rich audit trail with success, skip, and failure states
+
+### 🧪 For Collaborators
+
+1. Drop your PDF in `pdf/`, named with its DOI
+2. Fill in one row of `csv/metadata_input.csv`
+3. Project lead will run scripts and validate before upload
+
+---
+
+This system is optimized for transparent research archiving, minimal manual editing, and multi-user collaboration.
+
 # PAnalytics Zenodo Archive
 
 This private GitHub repository manages the automated preparation and upload of academic files (PDFs, CSVs) to [Zenodo](https://zenodo.org/), under the `panalytics` community.
