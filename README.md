@@ -1,5 +1,7 @@
 ## 📦 Project Overview: PAnalytics Zenodo Archive System
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15460330.svg)](https://doi.org/10.5281/zenodo.15460330)
+
 This project automates the metadata preparation, validation, and upload of research artifacts (PDFs and data files) to [Zenodo](https://zenodo.org/) under the `panalytics` community.
 
 ### ✅ Key Features Implemented
